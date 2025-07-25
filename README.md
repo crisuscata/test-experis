@@ -58,7 +58,7 @@ Crea una nueva orden con validación automática de datos.
     }
   ]
 }
-
+```json
 ✅ Éxito (200):
 {
   "total": 66.0,
