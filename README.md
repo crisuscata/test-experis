@@ -1,41 +1,38 @@
+# 🛒 Microservicio de Órdenes de Clientes
 
-Microservicio Spring Boot para la gestión de órdenes de clientes con seguimiento de productos y totalización automática.
+Microservicio Spring Boot para gestión completa de órdenes con validación automática y cálculo de totales.
 
 ## 📋 Tabla de Contenidos
 - [Tecnologías](#-tecnologías-utilizadas)
 - [Estructura](#-estructura-del-proyecto)
-- [Endpoints](#-endpoints)
-- [Ejemplos](#-ejemplos-de-uso)
+- [API](#-endpoints-de-la-api)
+- [Ejemplos](#-ejemplos-prácticos)
+- [Ejecución](#-ejecución-del-proyecto)
+- [Configuración](#-configuración-avanzada)
 
 ## 🚀 Tecnologías Utilizadas
 
-- **Core**: 
-  - Java 17
-  - Spring Boot 3.5.4
-  - Maven
-
-- **Persistencia**:
-  - Spring Data JPA
-  - H2 Database (DEV)
-
-- **Utilidades**:
-  - Lombok
-  - MapStruct
-  - Validación Spring
+| Categoría       | Tecnologías                              |
+|-----------------|------------------------------------------|
+| **Core**        | Java 17, Spring Boot 3.5.4, Maven       |
+| **Persistencia**| Spring Data JPA, H2 (DEV), MySQL (PROD) |
+| **Utilidades**  | Lombok, MapStruct, Validación Spring     |
+| **Pruebas**     | JUnit 5, Mockito        |
 
 ## 📦 Estructura del Proyecto
 
-customer-microservices/
-├── src/
-│ ├── main/java/com/experis/test/
-│ │ ├── controller/ # Capa de endpoints
-│ │ ├── service/ # Lógica de negocio
-│ │ ├── repository/ # Acceso a datos
-│ │ ├── entity/ # Entidades JPA
-│ │ ├── dto/ # Objetos de transferencia
-│ │ └── config/ # Configuraciones
-│ └── test/ # Pruebas unitarias
-└── pom.xml # Configuración Maven
+```bash
+src/
+├── main/
+│   ├── java/com/experis/order/
+│   │   ├── config/       # Configuraciones Spring
+│   │   ├── controller/   # REST endpoints
+│   │   ├── service/      # Lógica de negocio
+│   │   ├── repository/   # Acceso a datos
+│   │   ├── model/        # Entidades y DTOs
+│   │   └── exception/    # Manejo de errores
+│   └── resources/        # Properties y templates
+└── test/                # Pruebas unitarias e integración
 
 
 ## 📌 Endpoints Principales
@@ -58,7 +55,7 @@ Crea una nueva orden con validación automática de datos.
     }
   ]
 }
-```json
+
 ✅ Éxito (200):
 {
   "total": 66.0,
