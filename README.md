@@ -73,3 +73,22 @@ Crea una nueva orden con validación automática de datos.
   "message": "Cantidad debe ser mayor a 0",
   "path": "/api/orders"
 }
+
+## 🏃 Ejecución del Proyecto
+
+### Requisitos Previos
+- Java 17 JDK instalado
+- Maven 3.6+ instalado
+- (Opcional) IDE como IntelliJ IDEA o VS Code
+
+### 1. Ejecución Local (desarrollo)
+```bash
+# Clonar repositorio
+git clone [url-del-repositorio]
+cd customer-microservices
+
+# Compilar y ejecutar
+mvn spring-boot:run
+
+El servicio estará disponible en:
+🌐 http://localhost:8081/api/orders
